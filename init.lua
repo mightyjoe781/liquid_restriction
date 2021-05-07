@@ -4,19 +4,15 @@ minetest.register_privilege("spill", {description = "Able to use all liquids.", 
 --list of all liquid nodes, feel free to add your own
 local liquid_list = {
     --source and flowing liquids
-    "default:water_source",
-    "default:water_flowing",
-    "default:river_water_source",
-    "default:river_water_flowing",
     "default:lava_source",
     "default:lava_flowing",
+	"technic:corium_flowing",
     --technic cans
     "technic:lava_can",
-    "technic:water_can",
+	"technic:corium_source",
     --buckets
     "bucket:bucket_lava",
-    "bucket:bucket_water",
-    "bucket:bucket_river_water",
+	"technic:bucket_corium",
     --bucket_wooden
     "bucket_wooden:bucket_water",
     "bucket_wooden:bucket_river_water",
@@ -78,4 +74,6 @@ if minetest.get_modpath("replacer") then
     replacer.blacklist["default:lava_flowing"] = true;
     replacer.blacklist["default:river_water_source"] = true;
     replacer.blacklist["default:river_water_flowing"] = true;
+	replacer.blacklist["technic:corium_flowing"] = true;
+    replacer.blacklist["technic:corium_source"] = true;
 end
